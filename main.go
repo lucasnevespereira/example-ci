@@ -4,6 +4,7 @@ import (
 	"example-ci/routes"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/html"
 )
 
 const (
@@ -12,11 +13,16 @@ const (
 
 func main() {
 
+	engine := html.New("./templates", ".html")
+
 	config := &fiber.Config{
 		AppName: "Example CI",
+		Views:   engine,
 	}
 
 	app := fiber.New(*config)
+
+	app.Static("/", "./public")
 
 	routes.Init(app)
 

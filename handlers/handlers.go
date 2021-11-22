@@ -20,13 +20,14 @@ var samplePosts = &[]models.Post{
 }
 
 func HomeHandler(c *fiber.Ctx) error {
-
-	return c.JSON(fiber.Map{
-		"status":  fiber.StatusOK,
-		"message": "Welcome Home!",
+	return c.Render("index", fiber.Map{
+		"Title": "My Web App",
 	})
 }
 
 func PostsHandler(c *fiber.Ctx) error {
-	return c.JSON(samplePosts)
+	return c.Render("posts", fiber.Map{
+		"Title": "My Posts",
+		"Posts": samplePosts,
+	})
 }
