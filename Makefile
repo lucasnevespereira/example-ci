@@ -1,14 +1,26 @@
+.PHONY: clean
 clean:
-	rm example-ci
+	go clean -i .
 
-run:
-	go run example-ci
+.PHONY: lint
+lint: clean
+	golint .
 
-test:
+remove:
+	rm -rf example-ci
+
+.PHONY: test
+test: lint
 	go test ./tests
 
+.PHONY: nodemon
 nodemon:
 	nodemon --exec go run example-ci --signal SIGTERM
 
-build:
+.PHONY: run
+run:
+	go run example-ci
+
+.PHONY: build
+build: remove
 	go build -o example-ci

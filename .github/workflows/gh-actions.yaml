@@ -1,0 +1,14 @@
+name: Example-CI Github Actions
+on:
+  push:
+    branches: [ main ]
+jobs:
+   runs-on: ubuntu-latest
+   lint:
+    steps:
+      - name: check linting
+        run: make lint
+    test:
+      steps:
+        - name: test application
+          run: make test
