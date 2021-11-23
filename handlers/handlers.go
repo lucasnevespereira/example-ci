@@ -21,6 +21,6 @@ func PostsHandler(c *fiber.Ctx) error {
 
 	return c.Render("posts", fiber.Map{
 		"Title": "My Posts",
-		"Posts": posts,
+		"Posts": &posts,
 	})
 }

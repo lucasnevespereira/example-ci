@@ -1,0 +1,12 @@
+[
+    {
+    "id":          3,
+    "content":     "Testing post with id 3",
+    "publishedAt": "2021-08-19"
+    },
+    {
+    "id":          4,
+    "content":     "Testing post with id 4",
+    "publishedAt": "2021-08-09"
+    }
+]
