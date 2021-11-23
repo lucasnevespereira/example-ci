@@ -18,3 +18,7 @@ Clean
 ```
 make clean
 ```
+Test
+```
+make test
+```
