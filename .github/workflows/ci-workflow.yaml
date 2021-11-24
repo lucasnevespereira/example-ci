@@ -8,13 +8,14 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Go
+      - name: Set up Go 1.x
         uses: actions/setup-go@v2
         with:
-          go-version: "1.17" # The Go version to download (if necessary) and use.
+          go-version: ^1.17
+        id: go
 
-      - name: copy modules
-        run: actions/checkout@v2
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
 
       - name: check format
         run: go fmt
