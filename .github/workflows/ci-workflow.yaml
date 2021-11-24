@@ -14,7 +14,7 @@ jobs:
           go-version: "1.17" # The Go version to download (if necessary) and use.
 
       - name: check linting
-        run: make lint
+        run: golint .
 
       - name: test application
-        run: make test
+        run: go test ./tests
