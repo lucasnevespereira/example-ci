@@ -10,7 +10,7 @@ import (
 var expectedPosts = &[]models.Post{
 	{
 		Id:          3,
-		Content:     "Testing post with id 3",
+		Content:     "Testing post with id 5",
 		PublishedAt: "2021-08-19",
 	},
 	{
